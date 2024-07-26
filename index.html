@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <style>
+    .margin-samping {
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+		.margin-ats {
+			margin-top: 20px;
+		}
+ </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="desc margin-samping">
+                <div class="text-center">
+                    <h2>Selamat datang di link of logo!</h2>
+                <p>logo baru semangat baru!! uhuy!</p>
+                <br>
+                <p>Yaudah si wir langsung pencet tombolnya aja wir kalo mau download</p>
+                <br>
+                </div>
+                <h3>Klik dibawah Untuk Download Logo Png</h3>
+                <div class="container text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <button id="downloadBtn" class="button-54 btn mx-2" onclick="handleAlod()">Dunlud PNG</button>
+                    </div>
+                </div>
+                <h3 class="margin-ats">klik dibawah untuk Download Logo Svg</h3>
+                <div class="container text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <button id="downloadBtn" class="button-54 btn mx-2" onclick="handleDog()">Dunlud SVG</button>
+                        <br>
+                        <button id="downloadBtn" class="button-54 btn mx-2" onclick="Duar()">Yang Ini Jangan diklik!!</button>
+                    </div>
+                </div>
+                <!-- <br><br>
+                <h3 class="font-weight-bold margin-ats">SENSUS PELAJAR MUHAMMADIYAH</h3>
+                <div class="container text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <button id="downloadBtn" class="button-54 btn mx-2" onclick="SensusSmk()">SENSUS Tingkat SMA/SMK/MA</button>
+                    </div>
+                </div>
+                 <h3 class="margin-ats">Klik Dibawah untuk Dokumentasi Fortasi</h3> -->
+                <!-- <div class="container text-center margin-ats">
+                    <div class="d-flex justify-content-center mb-3">
+                        <button id="downloadBtn" class="button-54 btn mx-2" onclick="SensusSmp()">SENSUS Tingkat SMP/MTs</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+function Duar() {
+    Swal.fire("Duarrr!!");
+}
+function handleAlod() {
+    Swal.fire({
+      title: "Mau Donlod yang mana?",
+      showDenyButton: true,
+      showCloseButton: true,
+      denyButtonColor: "#3085d6",
+      confirmButtonText: "Download Hitam",
+      denyButtonText: `Download Putih`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Sedang menyiapkan File',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000, // 3 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const downloadLink = document.createElement('a');
+          downloadLink.href = 'https://kayol.site/logokita/black.png';
+          downloadLink.download = 'black.png';
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+    
+          // Tutup SweetAlert setelah pengunduhan selesai
+          Swal.close();
+        }, 3000);
+      } else if (result.isDenied) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Sedang menyiapkan File',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1000, // 1 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const Katalog = document.createElement('a');
+          Katalog.href = 'https://kayol.site/logokita/white.png';
+                Katalog.download = 'white.png';
+				document.body.appendChild(Katalog);
+				Katalog.click();
+				document.body.removeChild(Katalog);
+			
+				// Tutup SweetAlert setelah pengunduhan selesai
+				Swal.close();
+				}, 3000);
+			}
+			});
+
+		}
+function handleDog() {
+    Swal.fire({
+      title: "Mau Donload yang mana?",
+      showDenyButton: true,
+      showCloseButton: true,
+      denyButtonColor: "#3085d6",
+      confirmButtonText: "Download Hitam",
+      denyButtonText: `Download Putih`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Sedang menyiapkan File',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000, // 3 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const downloadLink = document.createElement('a');
+          downloadLink.href = 'https://kayol.site/logokita/black.svg';
+          downloadLink.download = 'black.svg';
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+    
+          // Tutup SweetAlert setelah pengunduhan selesai
+          Swal.close();
+        }, 3000);
+      } else if (result.isDenied) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Sedang menyiapkan File',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1000, // 1 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const Katalog = document.createElement('a');
+          Katalog.href = 'https://kayol.site/logokita/white.svg';
+                Katalog.download = 'white.svg';
+				document.body.appendChild(Katalog);
+				Katalog.click();
+				document.body.removeChild(Katalog);
+			
+				// Tutup SweetAlert setelah pengunduhan selesai
+				Swal.close();
+				}, 3000);
+			}
+			});
+
+		}
+	</script>
+</body>
+</html>
